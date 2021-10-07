@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
+    top: 50;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.267);
+    box-shadow: 2.5px 2.5px 2.5px 2.5px rgba(0, 0, 0, 0.664);
+    width: 370px;
+    /* height: 65%; */
+    border-radius: .5rem;
+}
+
+.txt_input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+}
+
+.inputPassword, .inputUsers {
+    height: 35px;
+    width: 235px;
+    border: none;
+    outline: none;
+    border-radius: 1.5rem;
+}
+
+.btn {
+    color: white;
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
+    border: none;
+    border-radius: 1.5rem;
+    height: 35px;
+    width: 135px;
+}
+
+.btn:hover {
+    background: rgba(20, 20, 20, 0.226);
+}
+
+.link_create {
+    color: rgb(206, 206, 206);
+    text-decoration: none;
+}
+
+.link_create_account {
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+div h1 {
+    text-align: center;
+    color: white;
+}
+
+.allBtn, .link_create_account {
+    text-align: center;
+}
+
+img{
+    margin-top: -17%;
+    width: 30%;
+    background: rgb(51, 152, 211);
+    border-radius: 50%;
+}
+.borderB{
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+        background: rgb(23, 87, 114);
+        overflow: hidden;
+        /* height: 100vh; */
+        /* width: 100vw; */
+    }
+    .center{
+        background: none;
+        box-shadow: none;
+    }
+}
