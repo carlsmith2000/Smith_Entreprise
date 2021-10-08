@@ -1,9 +1,14 @@
 <?php
     include('./autoLoader/autoLoader.php');
 
-    $articles = new ViewSmithEntreprise();
+    $viewArticles = new ViewSmithEntreprise();
+    $controlerArticles = new ControleurSmithEntreprise();
     
-   $allArticles = $articles->allArticles();
+   $allArticles = $viewArticles->allArticles();
+   
     echo "<pre>";
+    print_r( $allArticles);
+
+    $controlerArticles->updateArticles(43, 'Gateau', 'Gateau a base de chocolat', 1500);
     print_r( $allArticles);
 ?>
