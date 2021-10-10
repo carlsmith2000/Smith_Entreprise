@@ -1,26 +1,62 @@
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(120deg, #2980b9, #8e44ad);
     top: 50;
     height: 100vh;
     overflow: hidden;
     box-sizing: border-box;
 }
-
+.bodyLogin{
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
+}
+.bdyA{
+    background: rgb(0, 57, 104);
+}
+h1{
+    margin-top: -50px;
+    margin-left: 85px;
+    margin-bottom: 50px ;
+}
 .center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.267);
+    background: rgba(112, 112, 112, 0.267);
     box-shadow: 2.5px 2.5px 2.5px 2.5px rgba(0, 0, 0, 0.664);
     width: 370px;
     /* height: 65%; */
     border-radius: .5rem;
 }
-
+.centerC{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.block_1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 40rem;
+    background: rgba(153, 153, 153, 0.164);
+    padding: 1rem;
+    border-radius: .8rem;
+    margin-left: 150px;
+}
+.btns{
+    margin-top: -3rem;
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
+}
+.formAjoutC{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .txt_input {
     display: flex;
     justify-content: center;
@@ -35,7 +71,45 @@ body {
     outline: none;
     border-radius: 1.5rem;
 }
+.input{
+    height: 35px;
+    width: 235px;
+    border: none;
+    outline: none;
+    border-radius: 1.5rem;
+}
+.addClient{
+    background: rgb(56, 168, 93);
+    width: 10%;
+    left: 50%;
+    padding: .4rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content:center;
+    border-radius: .2rem;
+}
+.btAct, .btAct1{
+    border: none;
+    outline: none;
+    border-radius: 1.5rem;
+    padding: .2rem;
+    color: rgb(0, 255, 21);
+    background: rgb(22, 98, 170);
+}
+.btAct:hover{
+    background: rgb(71, 127, 180);
+}
+.btAct1:hover{
+    background: rgb(204, 62, 62);
+}
 
+.btAct1{
+    background-color: brown;
+    color: white;
+}
+.formAjoutC{
+    display: flex;
+}
 .btn {
     color: white;
     background: linear-gradient(120deg, #2980b9, #8e44ad);
@@ -68,26 +142,65 @@ div h1 {
     text-align: center;
 }
 
-img{
+img {
     margin-top: -17%;
     width: 30%;
     background: rgb(51, 152, 211);
     border-radius: 50%;
 }
-.borderB{
+.gStock{
+    width: 20%;
+    background: rgb(51, 152, 211);
+    border-radius: 50%;
+}
+.borderB {
     display: flex;
     justify-content: center;
 }
+
+tr {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    background: rgb(127, 180, 216);
+}
+.color{
+    background-color: rgba(75, 101, 126, 0.192);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* justify-content:center; */
+    margin-left: 250px;
+    /* width: 100 ; */
+    /* min-height: 100vh; */
+    background: rgb(0, 57, 104);
+}
+
+table {
+    border: rgb(24, 70, 100) solid 1px;
+    width: 100%;
+    color: rgb(240, 234, 234);
+    margin-top:  15px;
+ 
+}
+
 
 @media only screen and (max-width: 400px) {
     body {
         background: rgb(23, 87, 114);
         overflow: hidden;
-        /* height: 100vh; */
-        /* width: 100vw; */
+        height: 100vh;
+        width: 100vw;
     }
-    .center{
+    .center {
         background: none;
         box-shadow: none;
-    }
+    }      
 }
+
+

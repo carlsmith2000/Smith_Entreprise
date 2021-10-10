@@ -7,7 +7,7 @@
         $dirs = [
             'db/',
             'login',
-            'SmithEntreprise/',
+            'SmithEntreprise/'
         ];
 
         $fullpath = '';

@@ -16,6 +16,9 @@
         public function insertIntoClients($nom, $prenom, $adresse, $codepostal, $ville, $pays, $telephone){
             $this-> insertIntoClient($nom, $prenom, $adresse, $codepostal, $ville, $pays, $telephone);
         }
+        public  function updateClients($numero, $nom, $prenom, $adresse, $codepostal, $ville, $pays, $telephone){
+            $this->updateClient($numero, $nom, $prenom, $adresse, $codepostal, $ville, $pays, $telephone);
+        }
 
 
         public function deleteAchats($id){

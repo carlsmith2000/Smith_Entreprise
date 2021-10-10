@@ -47,7 +47,7 @@
         // INSETION DANS LA TABLE CLIENT
 
         protected function insertIntoClient($nom, $prenom, $adresse, $codepostal, $ville, $pays, $telephone){
-            $sql = " INSERT INTO achats (nom, prenom, adresse, codepostal, ville, pays, telephone) VALUES (?, ?, ?, ?, ?, ?, ?); ";
+            $sql = " INSERT INTO clients (nom, prenom, adresse, codepostal, ville, pays, telephone) VALUES (?, ?, ?, ?, ?, ?, ?); ";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$nom, $prenom, $adresse, $codepostal, $ville, $pays, $telephone]);
         }
@@ -72,7 +72,7 @@
         // UPDATE DANS LA TABLE CLIENT
 
         protected function updateClient($numero, $nom, $prenom, $adresse, $codepostal, $ville, $pays, $telephone){
-            $sql = "UPDATE clients set nom = ?, prenom = ?, adresse = ?, codepostal = ?, ville =?, pays = ?, telephone = ? WHERE numero = ? ;";
+            $sql = "UPDATE clients set nom = ?, prenom = ?, adresse = ?, codepostal = ?, ville = ?, pays = ?, telephone = ? WHERE numero = ? ;";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$nom, $prenom, $adresse, $codepostal, $ville, $pays, $telephone, $numero]);
         }
@@ -82,25 +82,28 @@
         // RECHERCHE DES DONNEES DANS LA TABLE ARTICLE
 
         public function searchArticle($id){
-            $sql = "SELECT FROM articles WHERE reference = ?";
+            $sql = "SELECT * FROM articles WHERE reference = ?";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$id]);
+            return $stm->fetch();
         }
 
         // RECHERCHE DES DONNEES DANS LA TABLE ACHAT
 
         public function searchAchat($id){
-            $sql = "SELECT FROM achats WHERE id_achat = ?";
+            $sql = "SELECT * FROM achats WHERE id_achat = ?";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$id]);
+            return $stm->fetch();
         }
 
         // RECHERCHE DES DONNEES DANS LA TABLE CLIENT
 
         public function searchClient($id){
-            $sql = "SELECT FROM clients WHERE numero = ?";
+            $sql = "SELECT * FROM clients WHERE numero = ?";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$id]);
+            return $stm->fetch();
         }
 
 
