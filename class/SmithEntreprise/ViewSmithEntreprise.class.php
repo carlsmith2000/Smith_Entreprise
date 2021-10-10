@@ -15,17 +15,17 @@
 
         
         public function searchAchats($id){
-            $this->searchAchat($id);
+            return $this->searchAchat($id);
         }
 
         public function searchArticles($id)
         {
-            $this->searchArticle($id);
+            return $this->searchArticle($id);
         }
 
         public function searchClients($id)
         {
-            $this->searchClient($id);
+            return $this->searchClient($id);
         }
     }
 ?>

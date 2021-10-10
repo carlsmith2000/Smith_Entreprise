@@ -31,7 +31,7 @@
         // INSETION DANS LA TABLE ARTICLE
 
         protected function insertIntoArticle( $nom, $description, $prix){
-            $sql = " INSERT INTO articles (nom, description, prix) VALUES (?, ?, ?, ?); ";
+            $sql = " INSERT INTO articles (nom, description, prix) VALUES (?, ?, ?); ";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([ $nom, $description, $prix]);
         }
@@ -56,7 +56,7 @@
         // UPDATE DANS LA TABLE ARTICLE
 
         protected function updateArticle($id, $nom, $description, $prix){
-            $sql = "UPDATE articles set nom = ?, description= ? , prix = ? WHERE reference = ? ;";
+            $sql = "UPDATE articles set nom = ?, description = ? , prix = ? WHERE reference = ? ;";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$nom, $description, $prix, $id]);
         }
