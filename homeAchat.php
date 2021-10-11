@@ -97,7 +97,7 @@ if (isset($_POST['valider'])) {
     <center>
         <div class="addClient">
             <div>
-                <a class="a" href="./AjouterAchat.php">Add Article</a>
+                <a class="a" href="./AjouterAchat.php">Add Achat</a>
             </div>
         </div>
     </center>

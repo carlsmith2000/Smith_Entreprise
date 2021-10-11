@@ -5,18 +5,18 @@ include_once("./header.php");
 $viewArticles = new ViewSmithEntreprise();
 
 $controlerArticles = new ControleurSmithEntreprise();
-    if (isset($_POST['valider'])) {
+if (isset($_POST['valider'])) {
 
-        $controlerArticles->insertIntoClients(
-            $_POST['nom'],
-            $_POST['prenom'],
-            $_POST['adresse'],
-            $_POST['CodePostal'],
-            $_POST['Ville'],
-            $_POST['Pays'],
-            $_POST['telephone']
-        );
-    }
+    $controlerArticles->insertIntoClients(
+        $_POST['nom'],
+        $_POST['prenom'],
+        $_POST['adresse'],
+        $_POST['CodePostal'],
+        $_POST['Ville'],
+        $_POST['Pays'],
+        $_POST['telephone']
+    );
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,16 +34,15 @@ $controlerArticles = new ControleurSmithEntreprise();
     $allArticles = $viewArticles->allArticles();
     $allClients = $viewArticles->allClients();
     $allAchats = $viewArticles->allAchats();
-    
+
     ?>
     <div>
-        <div class="addClient">
-            <div>
-                <a class="a" href="./AjouterClient.php">Add Client</a>
-            </div>
-        </div>
+        <p class="gestionA">
+            GESTION ACHAT
+        </p>
+
         <table border="1">
-            
+
             <thead>
                 <tr>
                     <th>No Client</th>
@@ -56,11 +55,11 @@ $controlerArticles = new ControleurSmithEntreprise();
                     <th>Action</th>
                 </tr>
             </thead>
-            
+
             <tbody>
                 <?php
                 foreach ($allClients as $client) {
-                    ?>
+                ?>
                     <tr class="color">
                         <td>
                             <?= $client->numero ?>
@@ -69,23 +68,23 @@ $controlerArticles = new ControleurSmithEntreprise();
                         <td>
                             <?= $client->nom ?>
                         </td>
-                        
+
                         <td>
                             <?= $client->prenom ?>
                         </td>
-                        
+
                         <td>
                             <?= $client->adresse ?>
                         </td>
-                        
+
                         <td>
                             <?= $client->codepostal ?>
                         </td>
-                        
+
                         <td>
                             <?= $client->ville ?>
                         </td>
-                        
+
                         <td>
                             <?= $client->pays ?>
                         </td>
@@ -97,17 +96,23 @@ $controlerArticles = new ControleurSmithEntreprise();
                             </form>
                         </td>
                     </tr>
-                    <?php
+                <?php
                 }
                 ?>
             </tbody>
-            
+
         </table>
     </div>
     <?php
 
-?>
-
+    ?>
+    <center>
+        <div class="addClient">
+            <div>
+                <a class="a" href="./AjouterClient.php">Add Client</a>
+            </div>
+        </div>
+    </center>
 </body>
 
 

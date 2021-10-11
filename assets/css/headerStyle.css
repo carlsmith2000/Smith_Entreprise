@@ -39,6 +39,9 @@ body{
 ul li:hover a{
     padding-left: 50px;
 }
+ul li:active a{
+    background-color: rgb(196, 16, 115);
+}
 .sidebar ul a i{
     margin-right: 16px;
 }

@@ -5,14 +5,14 @@ include_once("./header.php");
 $viewSmithEntreprise = new ViewSmithEntreprise();
 
 $controleurSmithEntreprise = new ControleurSmithEntreprise();
-    if (isset($_POST['valider'])) {
+if (isset($_POST['valider'])) {
 
-        $controleurSmithEntreprise->insertIntoArticles(
-            $_POST['nom'],
-            $_POST['description'],
-            $_POST['prix']
-        );
-    }
+    $controleurSmithEntreprise->insertIntoArticles(
+        $_POST['nom'],
+        $_POST['description'],
+        $_POST['prix']
+    );
+}
 ?>
 
 <!DOCTYPE html>
@@ -30,16 +30,15 @@ $controleurSmithEntreprise = new ControleurSmithEntreprise();
     $allArticles = $viewSmithEntreprise->allArticles();
     $allClients = $viewSmithEntreprise->allClients();
     $allAchats = $viewSmithEntreprise->allAchats();
-    
+
     ?>
     <div>
-        <div class="addClient">
-            <div>
-                <a class="a" href="./AjouterArticle.php">Add Article</a>
-            </div>
-        </div>
+
+        <p class="gestionA">
+            GESTION ARTICLE
+        </p>
         <table border="1">
-            
+
             <thead>
                 <tr>
                     <th>Ref Article</th>
@@ -49,11 +48,11 @@ $controleurSmithEntreprise = new ControleurSmithEntreprise();
                     <th>Action</th>
                 </tr>
             </thead>
-            
+
             <tbody>
                 <?php
                 foreach ($allArticles as $article) {
-                    ?>
+                ?>
                     <tr class="color">
                         <td>
                             <?= $article->reference ?>
@@ -62,15 +61,15 @@ $controleurSmithEntreprise = new ControleurSmithEntreprise();
                         <td>
                             <?= $article->nom ?>
                         </td>
-                        
+
                         <td>
                             <?= $article->description ?>
                         </td>
-                        
+
                         <td>
                             <?= $article->prix ?><small> HTG</small>
                         </td>
-                        
+
                         <td>
                             <form action="./ModifierArticle.php" method="POST">
                                 <input type="hidden" value="<?= $article->reference ?> " name="referenceArticle">
@@ -79,16 +78,23 @@ $controleurSmithEntreprise = new ControleurSmithEntreprise();
                             </form>
                         </td>
                     </tr>
-                    <?php
+                <?php
                 }
                 ?>
             </tbody>
-            
+
         </table>
     </div>
     <?php
 
-?>
+    ?>
+    <center>
+        <div class="addClient">
+            <div>
+                <a class="a" href="./AjouterArticle.php">Add Article</a>
+            </div>
+        </div>
+    </center>
 
 </body>
 
