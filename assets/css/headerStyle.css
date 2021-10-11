@@ -15,7 +15,8 @@ body{
     height: 100%;
 }
 .sidebar header{
-    font-size: 22px;
+    font-size: 25px;
+    font-weight: 700;
     color: white;
     text-align: center;
     line-height: 50px;

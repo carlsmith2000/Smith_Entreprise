@@ -53,19 +53,31 @@ include_once("./header.php");
                     <div class="block_1">
 
                         <div class="txt_input">
-                            <input class="input" readonly type="text" name="reference" value=<?= $article->reference ?>  required>
+                            <div>
+                                <label for="reference">Reference Article</label>
+                                <input class="input" readonly type="text" name="reference" value=<?= $article->reference ?>  required>
+                            </div>
                         </div>
 
                         <div class="txt_input">
-                            <input class="input" type="text" name="nom" value=<?= $article->nom ?> placeholder="Entre Le nom de L'article" required>
+                            <div>
+                                <label for="nom">Nom Article</label>
+                                <input class="input" type="text" name="nom" value=<?= $article->nom ?> placeholder="Entre Le nom de L'article" required>
+                            </div>
                         </div>
 
                         <div class="txt_input">
-                            <input class="input" type="text" name="description" value=<?= $article->description ?> placeholder="Entre La Description">
+                            <div>
+                                <label for="description">Description Article</label>
+                                <input class="input" type="text" name="description" value=<?= $article->description ?> placeholder="Entre La Description">
+                            </div>
                         </div>
 
                         <div class="txt_input">
-                            <input class="input" type="number" name="prix" value=<?= $article->prix ?> placeholder="Entre Le prix L'article" required >
+                            <div>
+                                <label for="prix">Prix Article</label>
+                                <input class="input" type="number" name="prix" value=<?= $article->prix ?> placeholder="Entre Le prix L'article" required >
+                            </div>
                         </div>
 
 

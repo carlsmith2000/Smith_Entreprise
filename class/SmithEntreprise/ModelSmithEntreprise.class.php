@@ -39,7 +39,7 @@
          // INSETION DANS LA TABLE ACHAT
 
          protected function insertIntoAchat($id_client, $id_article, $quantite, $date){
-            $sql = " INSERT INTO achats (id_achat, id_client, id_article, quantite, date) VALUES (?, ?, ?, ?); ";
+            $sql = " INSERT INTO achats (id_client, id_article, quantite, date) VALUES (?, ?, ?, ?); ";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$id_client, $id_article, $quantite, $date]);
         }
@@ -127,6 +127,11 @@
         // SUPPRESSION DES DONNEES DANS LA TABLE CLIENT
 
         public function deleteClient($id){
+
+            $sql = "DELETE FROM achats WHERE id_client = ?";
+            $stm = $this->getConnection()->prepare($sql);
+            $stm->execute([$id]);
+
             $sql = "DELETE FROM clients WHERE numero = ?";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$id]);

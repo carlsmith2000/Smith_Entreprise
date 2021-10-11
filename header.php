@@ -16,7 +16,7 @@
         <ul>
             <li><a href="./homeClient.php">Gestion Client</a></li>
             <li><a href="./homeArticle.php">Gestion Article</a></li>
-            <li><a href="#">Gestion Achat</a></li>
+            <li><a href="./homeAchat.php">Gestion Achat</a></li>
             <li><a href="#">User</a></li>
         </ul>
     </div>

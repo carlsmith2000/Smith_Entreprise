@@ -26,15 +26,24 @@ include_once("./header.php");
             <div class="block_1">
 
                 <div class="txt_input">
-                    <input class="input" type="text" name="nom" placeholder="Entre Le 	nom de L'article" required>
+                    <div>
+                        <label for="nom">Nom Article</label>
+                        <input class="input" type="text" name="nom" placeholder="Entre Le 	nom de L'article" required>
+                    </div>
                 </div>
 
                 <div class="txt_input">
-                    <input class="input" type="text" name="description" placeholder="Entre La description de L'article">
+                    <div>
+                        <label for="description">Description Article</label>
+                        <input class="input" type="text" name="description" placeholder="Entre La description de L'article">
+                    </div>
                 </div>
 
                 <div class="txt_input">
-                    <input class="input" type="number" name="prix" placeholder="Entre Le prix de L'article" required>
+                    <div>
+                        <label for="prix">Prix Article</label>
+                        <input class="input" type="number" name="prix" placeholder="Entre Le prix de L'article" required>
+                    </div>
                 </div>
 
 

@@ -5,12 +5,16 @@
             $this->updateArticle($id, $nom, $description, $prix);   
         }
 
+        public function updateAchats($id_achat, $id_client, $id_article, $quantite, $date){
+            $this->updateAchat($id_achat, $id_client, $id_article, $quantite, $date);   
+        }
+
         public function insertIntoArticles($nom, $description, $prix){
             $this-> insertIntoArticle( $nom, $description, $prix);
         }
 
-        public function insertIntoAchats($id_achat, $id_client, $id_article, $quantite, $date){
-            $this-> insertIntoAchat($id_achat, $id_client, $id_article, $quantite, $date);
+        public function insertIntoAchats($id_client, $id_article, $quantite, $date){
+            $this-> insertIntoAchat( $id_client, $id_article, $quantite, $date);
         }
 
         public function insertIntoClients($nom, $prenom, $adresse, $codepostal, $ville, $pays, $telephone){

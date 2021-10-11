@@ -57,35 +57,61 @@ include_once("./header.php");
 
                     <div class="block_1">
                         <div class="txt_input">
-                            <input class="input" value=<?= $client->numero ?> readonly type="number" name="numero" placeholder="Entre Le Nom du Client" required>
+                            <div>
+                                <label for="numero">Numero du Client</label>
+                                <input class="input" value=<?= $client->numero ?> readonly type="number" name="numero" placeholder="Entre Le Nom du Client" required>
+                            </div>
                         </div>
 
                         <div class="txt_input">
-                            <input class="input" value=<?= $client->nom ?> type="text" name="nom" placeholder="Entre Le Nom du Client" required>
+                            <div>
+                                <label for="nom">Nom du Client</label>
+                                <input class="input" value=<?= $client->nom ?> type="text" name="nom" placeholder="Entre Le Nom du Client" required>
+                            </div>
                         </div>
 
                         <div class="txt_input">
-                            <input class="input" value=<?= $client->prenom ?> type="text" name="prenom" placeholder="Entre Le Prenom du Client" required>
+                            <div>
+                                <label for="prenom">Prenom du Client</label>
+                                <input class="input" value=<?= $client->prenom ?> type="text" name="prenom" placeholder="Entre Le Prenom du Client" required>
+                            </div>
                         </div>
 
                         <div class="txt_input">
-                            <input class="input" value=<?= $client->adresse ?> type="text" name="adresse" placeholder="Entre L'adresse du Client" required>
+                            <div>
+                                <label for="adresse">Adresse du Client</label>
+                                <input class="input" value=<?= $client->adresse ?> type="text" name="adresse" placeholder="Entre L'adresse du Client" required>
+                            </div>
                         </div>
 
                         <div class="txt_input">
-                            <input class="input" value=<?= $client->codepostal ?> type="text" name="CodePostal" placeholder="Entre Le Code Postal du Client" required>
+                            <div>
+                                <label for="CodePostal">Code Postal</label>
+                                <input class="input" value=<?= $client->codepostal ?> type="text" name="CodePostal" placeholder="Entre Le Code Postal du Client" required>
+                            </div>
                         </div>
 
                         <div class="txt_input">
-                            <input class="input" value=<?= $client->ville ?> type="text" name="Ville" placeholder="Entre La Ville du Client" required>
+                            <div>
+                                <div>
+                                    <label for="Ville">Ville</label>
+                                    <input class="input" value=<?= $client->ville ?> type="text" name="Ville" placeholder="Entre La Ville du Client" required>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="txt_input">
-                            <input class="input" value=<?= $client->telephone ?> type="text" name="telephone" placeholder="Entre Le no telephone du Client" required>
+                            <div>
+                                <label for="telephone">Telephone Client</label>
+                                <input class="input" value=<?= $client->telephone ?> type="text" name="telephone" placeholder="Entre Le no telephone du Client" required>
+                            </div>
                         </div>
 
                         <div class="txt_input">
-                            <input class="input" value=<?= $client->pays ?> type="text" name="Pays" placeholder="Entre Le Pays du Client" required>
+                            <div>
+                                <label for="Pays">Pays</label>
+                                <input class="input" value=<?= $client->pays ?> type="text" name="Pays" placeholder="Entre Le Pays du Client" required>
+                            </div>
                         </div>
 
                     </div>

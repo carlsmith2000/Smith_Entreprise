@@ -1,7 +1,9 @@
 <?php
-    include('./autoLoader/autoLoader.php');
-    $viewSmithEntreprise = new ViewSmithEntreprise();
-    $allClients = $viewSmithEntreprise->allClients();
+include('./autoLoader/autoLoader.php');
+
+$viewSmithEntreprise = new ViewSmithEntreprise();
+$allClients = $viewSmithEntreprise->allClients();
+$allArticles = $viewSmithEntreprise->allArticles();
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +22,7 @@
 include_once("./header.php");
 ?>
 
+
 <body class="bdyA">
     <div class="centerC">
         <h1>AJOUTER ACHAT</h1>
@@ -29,23 +32,48 @@ include_once("./header.php");
 
 
                 <div class="txt_input">
-                    <select name="idClient" class="input">
-                        <?php
-                            foreach($allClients as $client){  
-                        ?>
-                        <option><?=$client->numero?></option>
-                        <?php
+                    <div>
+                        <label for="idClient">Id du Client</label>
+                        <select name="idClient" class="input">
+                            <?php
+                            foreach ($allClients as $client) {
+                            ?>
+                                <option><?= $client->numero ?></option>
+                            <?php
                             }
-                        ?>
-                    </select>
+                            ?>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="txt_input">
+                    <div>
+                        <label for="idArticle">Id Article</label><br>
+                        <select name="idArticle" class="input">
+                            <?php
+                            foreach ($allArticles as $article) {
+                            ?>
+                                <option><?= $article->reference ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="txt_input">
-                    <input class="input" type="number" name="quantite" placeholder="quantite" min = 1 max = 100 required>
+                    <div>
+                        <label for="quantite">Quantité</label>
+                        <input class="input" type="number" name="quantite" placeholder="quantite" min=1 max=100 required>
+                    </div>
                 </div>
 
                 <div class="txt_input">
-                    <input class="input" type="date" name="date"  required>
+                    <div>
+                        <label for="date">Date</label>
+                        <input class="input" type="date" name="date" required>
+                    </div>
                 </div>
 
 

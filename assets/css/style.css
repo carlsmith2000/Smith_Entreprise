@@ -78,6 +78,21 @@ h1{
     outline: none;
     border-radius: 1.5rem;
 }
+label{
+    color: white;
+    margin-bottom: .5rem;
+}
+.gestionA{
+    font-weight: 800;
+    font-size: 2rem;
+    color: white;
+    background-color: rgb(4, 49, 75);
+    height: 50px;
+}
+.txt_input div{
+    display: flex;
+    flex-direction: column;
+}
 .addClient{
     background: rgb(56, 168, 93);
     width: 10%;
