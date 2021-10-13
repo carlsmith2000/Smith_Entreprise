@@ -38,7 +38,7 @@ if (isset($_POST['valider'])) {
     ?>
     <div>
         <p class="gestionA">
-            GESTION ACHAT
+            GESTION CLIENT
         </p>
 
         <table border="1">

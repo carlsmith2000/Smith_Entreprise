@@ -15,7 +15,7 @@ body {
     background: rgb(0, 57, 104);
 }
 h1{
-    margin-top: -50px;
+    margin-top: -40px;
     margin-left: 85px;
     margin-bottom: 50px ;
 }
@@ -40,7 +40,7 @@ h1{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 40rem;
+    width: 33rem;
     background: rgba(153, 153, 153, 0.164);
     padding: 1rem;
     border-radius: .8rem;
