@@ -1,3 +1,6 @@
+<?php
+include_once('../../autoLoader/autoLoader.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +11,29 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <title>Login | ECS</title>
 </head>
+
+<?php
+    if(isset($_POST['connect'])){
+        // $connectToBD = new ConnectToBD($_POST['users'], $_POST['password']);
+        if($connectToBD == false){
+           session_start();
+           $_SESSION['erroMsg'] = 'user Name or Password not correct';
+           header('location : ./login.php');
+           exit();
+        }else{
+            session_start();
+            $_SESSION['users'] = (object)[
+                'userName' => $_POST['users'],
+                'password' => $_POST['password']
+            ];
+            header('location : ./homeArticle.php');
+        }
+    }
+
+    if(isset($_SESSION['erroMsg'])){
+        echo $_SESSION['erroMsg'];
+    }
+?>
 
 <body class = "bodyLogin">
     <div class="center">

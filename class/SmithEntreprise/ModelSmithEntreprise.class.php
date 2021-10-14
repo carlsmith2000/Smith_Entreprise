@@ -111,6 +111,11 @@
         // SUPPRESSION DES DONNEES DANS LA TABLE ARTICLE
 
         public function deleteArticle($id){
+
+            $sql = "DELETE FROM achats WHERE id_article = ?";
+            $stm = $this->getConnection()->prepare($sql);
+            $stm->execute([$id]);
+
             $sql = "DELETE FROM articles WHERE reference = ?";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$id]);
@@ -119,6 +124,7 @@
         // SUPPRESSION DES DONNEES DANS LA TABLE ACHAT
 
         public function deleteAchat($id){
+
             $sql = "DELETE FROM achats WHERE id_achat = ?";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$id]);

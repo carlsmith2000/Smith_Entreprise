@@ -6,7 +6,7 @@
 
         $dirs = [
             'db/',
-            'login',
+            'login/',
             'SmithEntreprise/'
         ];
 
