@@ -9,8 +9,8 @@
             $this->updateAchat($id_achat, $id_client, $id_article, $quantite, $date);   
         }
 
-        public function insertIntoArticles($nom, $description, $prix){
-            $this-> insertIntoArticle( $nom, $description, $prix);
+        public function insertIntoArticles($nom, $description, $prix,$qte){
+            $this-> insertIntoArticle( $nom, $description, $prix,$qte);
         }
 
         public function insertIntoAchats($id_client, $id_article, $quantite, $date){

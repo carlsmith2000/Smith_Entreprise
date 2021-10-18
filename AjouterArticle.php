@@ -46,6 +46,12 @@ include_once("./header.php");
                     </div>
                 </div>
 
+                <div class="txt_input">
+                    <div>
+                        <label for="qte">Prix Article</label>
+                        <input class="input" type="number" name="qte" placeholder="Entre La qte d'article" required>
+                    </div>
+                </div>
 
             </div>
 

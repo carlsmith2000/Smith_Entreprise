@@ -155,6 +155,7 @@ div h1 {
 
 .allBtn, .link_create_account {
     text-align: center;
+    margin: 1rem 0;
 }
 
 img {

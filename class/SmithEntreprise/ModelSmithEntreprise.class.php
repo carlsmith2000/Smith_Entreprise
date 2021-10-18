@@ -30,10 +30,10 @@
 
         // INSETION DANS LA TABLE ARTICLE
 
-        protected function insertIntoArticle( $nom, $description, $prix){
-            $sql = " INSERT INTO articles (nom, description, prix) VALUES (?, ?, ?); ";
+        protected function insertIntoArticle( $nom, $description, $prix, $qte){
+            $sql = " INSERT INTO articles (nom, description, prix, qteRestante) VALUES (?, ?, ?, ?); ";
             $stm = $this->getConnection()->prepare($sql);
-            $stm->execute([ $nom, $description, $prix]);
+            $stm->execute([ $nom, $description, $prix, $qte]);
         }
 
          // INSETION DANS LA TABLE ACHAT
@@ -42,6 +42,14 @@
             $sql = " INSERT INTO achats (id_client, id_article, quantite, date) VALUES (?, ?, ?, ?); ";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$id_client, $id_article, $quantite, $date]);
+
+            $sql = "UPDATE articles set qteAvant = qteRestante WHERE reference = ? ;";
+            $stm = $this->getConnection()->prepare($sql);
+            $stm->execute([$id_article]);
+
+            $sql = "UPDATE articles set qteRestante = (qteRestante - all(SELECT quantite FROM  achats WHERE id_article = reference  ) )  WHERE reference = ? ;";
+            $stm = $this->getConnection()->prepare($sql);
+            $stm->execute([$id_article]);
         }
 
         // INSETION DANS LA TABLE CLIENT
@@ -60,6 +68,7 @@
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$nom, $description, $prix, $id]);
         }
+        
 
         // UPDATE DANS LA TABLE ACHTAT
 
@@ -67,6 +76,12 @@
             $sql = "UPDATE achats set id_client = ?, id_article = ? , quantite = ?, date = ?  WHERE id_achat = ? ;";
             $stm = $this->getConnection()->prepare($sql);
             $stm->execute([$id_client, $id_article, $quantite, $date, $id_achat]);
+
+            $sql = "UPDATE articles set qteRestante = (qteAvant - (SELECT quantite FROM  achats WHERE id_article = reference  ) )  WHERE reference = ? ;";
+            $stm = $this->getConnection()->prepare($sql);
+            $stm->execute([$id_article]);
+
+
         }
 
         // UPDATE DANS LA TABLE CLIENT
@@ -77,10 +92,9 @@
             $stm->execute([$nom, $prenom, $adresse, $codepostal, $ville, $pays, $telephone, $numero]);
         }
 
-
-
+       
         // RECHERCHE DES DONNEES DANS LA TABLE ARTICLE
-
+        
         public function searchArticle($id){
             $sql = "SELECT * FROM articles WHERE reference = ?";
             $stm = $this->getConnection()->prepare($sql);

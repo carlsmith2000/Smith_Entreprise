@@ -2,6 +2,8 @@
 include('./autoLoader/autoLoader.php');
 include_once("./header.php");
 
+
+
 $viewSmithEntreprise = new ViewSmithEntreprise();
 
 $controleurSmithEntreprise = new ControleurSmithEntreprise();
@@ -10,7 +12,8 @@ if (isset($_POST['valider'])) {
     $controleurSmithEntreprise->insertIntoArticles(
         $_POST['nom'],
         $_POST['description'],
-        $_POST['prix']
+        $_POST['prix'],
+        $_POST['qte']
     );
 }
 ?>
@@ -43,7 +46,8 @@ if (isset($_POST['valider'])) {
                 <tr>
                     <th>Ref Article</th>
                     <th>Nom Article</th>
-                    <th>Description Client</th>
+                    <th>Description</th>
+                    <th>Qte Restante</th>
                     <th>Prix Article</th>
                     <th>Action</th>
                 </tr>
@@ -64,6 +68,10 @@ if (isset($_POST['valider'])) {
 
                         <td>
                             <?= $article->description ?>
+                        </td>
+
+                        <td>
+                            <?= $article->qteRestante ?>
                         </td>
 
                         <td>

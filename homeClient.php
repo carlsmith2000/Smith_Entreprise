@@ -1,12 +1,16 @@
 <?php
 include('./autoLoader/autoLoader.php');
 include_once("./header.php");
+// session_start();
 
 $viewArticles = new ViewSmithEntreprise();
-
 $controlerArticles = new ControleurSmithEntreprise();
-if (isset($_POST['valider'])) {
+echo '<pre>'; 
+print_r($_SESSION['users']->userName);
 
+
+if (isset($_POST['valider'])) {
+    
     $controlerArticles->insertIntoClients(
         $_POST['nom'],
         $_POST['prenom'],
@@ -31,18 +35,18 @@ if (isset($_POST['valider'])) {
 <body class="bdyc">
     <?php
 
-    $allArticles = $viewArticles->allArticles();
-    $allClients = $viewArticles->allClients();
-    $allAchats = $viewArticles->allAchats();
+$allArticles = $viewArticles->allArticles();
+$allClients = $viewArticles->allClients();
+$allAchats = $viewArticles->allAchats();
 
-    ?>
+?>
     <div>
         <p class="gestionA">
             GESTION CLIENT
         </p>
-
+        
         <table border="1">
-
+            
             <thead>
                 <tr>
                     <th>No Client</th>
@@ -55,11 +59,11 @@ if (isset($_POST['valider'])) {
                     <th>Action</th>
                 </tr>
             </thead>
-
+            
             <tbody>
                 <?php
                 foreach ($allClients as $client) {
-                ?>
+                    ?>
                     <tr class="color">
                         <td>
                             <?= $client->numero ?>
@@ -68,23 +72,23 @@ if (isset($_POST['valider'])) {
                         <td>
                             <?= $client->nom ?>
                         </td>
-
+                        
                         <td>
                             <?= $client->prenom ?>
                         </td>
-
+                        
                         <td>
                             <?= $client->adresse ?>
                         </td>
-
+                        
                         <td>
                             <?= $client->codepostal ?>
                         </td>
-
+                        
                         <td>
                             <?= $client->ville ?>
                         </td>
-
+                        
                         <td>
                             <?= $client->pays ?>
                         </td>
@@ -96,16 +100,15 @@ if (isset($_POST['valider'])) {
                             </form>
                         </td>
                     </tr>
-                <?php
+                    <?php
                 }
                 ?>
             </tbody>
-
+            <!-- <?=$propriete?> -->
         </table>
     </div>
     <?php
-
-    ?>
+?>
     <center>
         <div class="addClient">
             <div>

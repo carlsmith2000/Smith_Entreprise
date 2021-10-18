@@ -43,8 +43,6 @@ include_once("./header.php");
             header('location: ./homeAchat.php');
         }
 
-
-
         if ($_POST['action'] == 'Modifier') {
             $achat = $viewSmithEntreprise->searchAchats($_POST['idAchat']);
     ?>

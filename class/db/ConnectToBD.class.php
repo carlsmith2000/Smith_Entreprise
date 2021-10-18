@@ -7,12 +7,12 @@ class ConnectToBD
     private $password = NULL;
     private $pdo = NULL;
 
-    function __construct($userName = 'root',  $password = '')
+    function __construct()
     {
         $this->host = 'localhost';
         $this->dbname = 'smithentreprise';
-        $this->userName = $userName;
-        $this->host = $password;
+        $this->userName = 'root';
+        $this->host = '';
     }
 
     function getConnection()
@@ -26,5 +26,14 @@ class ConnectToBD
         } catch (PDOException $e) {
             return false;
         }
+    }
+
+    public function isUserExist($username, $password)
+    {
+        $sql = 'SELECT * FROM MYSQL.USER WHERE USER LIKE ? AND password LIKE PASSWORD(?)';
+        $stmt = $this->getConnection()->prepare($sql);
+        $stmt->execute([$username, $password]);
+        $stmt->fetchAll();
+        return ($stmt->rowCount() > 0);
     }
 }

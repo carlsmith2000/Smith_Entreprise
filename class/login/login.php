@@ -1,5 +1,6 @@
 <?php
-include_once('../../autoLoader/autoLoader.php');
+if (include_once('../../autoLoader/autoLoader.php'))
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,33 +14,28 @@ include_once('../../autoLoader/autoLoader.php');
 </head>
 
 <?php
-    if(isset($_POST['connect'])){
-        // $connectToBD = new ConnectToBD($_POST['users'], $_POST['password']);
-        if($connectToBD == false){
-           session_start();
-           $_SESSION['erroMsg'] = 'user Name or Password not correct';
-           header('location : ./login.php');
-           exit();
-        }else{
-            session_start();
-            $_SESSION['users'] = (object)[
-                'userName' => $_POST['users'],
-                'password' => $_POST['password']
-            ];
-            header('location : ./homeArticle.php');
-        }
-    }
+if (isset($_POST['connect'])) {
+    $connectToBD = new ConnectToBD();
 
-    if(isset($_SESSION['erroMsg'])){
-        echo $_SESSION['erroMsg'];
+    if ($connectToBD->isUserExist($_POST['users'], $_POST['password'])) {
+        $_SESSION['users'] = (object)[
+            'userName' => $_POST['users'],
+            'password' => $_POST['password']
+        ];
+        header('location: ../../homeClient.php');
+        exit();
+    } else {
+        $erroMsg = 'User Name or Password not correct';
     }
+}
+
 ?>
 
-<body class = "bodyLogin">
+<body class="bodyLogin">
     <div class="center">
         <div class="borderB"><img src="../../assets/IMG/userOk.png" alt=""></div>
         <h1>Sign in</h1>
-        <form action="login.php" method="POST" class="form">
+        <form action="./login.php" method="POST" class="form">
 
             <div class="txt_input">
                 <input class="inputUsers" type="text" name="users" placeholder="users Name">
@@ -54,11 +50,16 @@ include_once('../../autoLoader/autoLoader.php');
                 <input class="btn" type="reset" name="reset" value="Reset">
             </div>
 
+            <?php
+            if (isset($erroMsg)) {
+                echo $erroMsg;
+            }
+            ?>
+
             <div class="link_create_account">
                 <a class="link_create" href="#">creer un Compte &rarr;</a>
             </div>
         </form>
-
     </div>
 
 </body>

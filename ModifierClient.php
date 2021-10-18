@@ -45,9 +45,7 @@ include_once("./header.php");
             $controlerArticles->deleteClients($_POST['idClient']);
             header('location: ./homeClient.php');
         } 
-        
-        
-        
+       
         if ($_POST['action'] == 'Modifier') {
             $client = $controlerArticles->searchClient($_POST['idClient']);
     ?>
